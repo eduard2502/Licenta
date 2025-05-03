@@ -1,0 +1,16 @@
+/* src/app/features/products/product-form/product-form.component.scss */
+.full-width {
+  width: 100%;
+}
+
+mat-card {
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}

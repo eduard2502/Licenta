@@ -1,0 +1,52 @@
+<!-- src/app/features/products/product-form/product-form.component.html -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{ editMode ? 'Editează Calculator' : 'Adaugă Calculator' }}
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nume</mat-label>
+        <input matInput formControlName="nume">
+        <mat-error *ngIf="form.controls['nume'].hasError('required')">
+          Numele este obligatoriu
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Procesor</mat-label>
+        <input matInput formControlName="procesor">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Memorie (GB)</mat-label>
+        <input matInput type="number" formControlName="memorie">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Stoc</mat-label>
+        <input matInput type="number" formControlName="stoc">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Preț (RON)</mat-label>
+        <input matInput type="number" formControlName="pret">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>URL Imagine</mat-label>
+        <input matInput formControlName="imagineUrl">
+      </mat-form-field>
+
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit">
+          {{ editMode ? 'Salvează' : 'Adaugă' }}
+        </button>
+        <button mat-button routerLink="/produse">Anulează</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
