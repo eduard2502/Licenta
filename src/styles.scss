@@ -1,4 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1) Import tema prebuilt dark */
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* 2) Override light-pink accent → albastru */
+.mat-accent .mat-button,
+.mat-accent .mat-raised-button,
+.mat-accent .mat-stroked-button {
+  background-color: #2196f3 !important; /* albastru 500 */
+  border-color:    #2196f3 !important;
+  color: #fff !important;
+}
+
+/* 3) Dark mode global */
+body {
+  background: #121212;
+  color: #e0e0e0;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+/* 4) Toolbar & sidenav */
+.mat-toolbar.mat-primary {
+  background: #1e1e1e !important;
+  color: #e0e0e0;
+}
+.mat-sidenav {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}

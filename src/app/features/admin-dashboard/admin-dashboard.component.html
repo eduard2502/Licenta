@@ -1,0 +1,16 @@
+<!-- src/app/app.component.html -->
+<mat-sidenav-container class="layout">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list *ngIf="auth.role==='admin'">
+      <a mat-list-item routerLink="/produse"     routerLinkActive="active">Produse</a>
+      <a mat-list-item routerLink="/produse/nou" routerLinkActive="active">Adaugă</a>
+      <a mat-list-item routerLink="/login" (click)="auth.logout()">Deconectează-te</a>
+    </mat-nav-list>
+    <mat-nav-list *ngIf="auth.role==='user'">
+      <a mat-list-item routerLink="/user" (click)="auth.logout()">Deconectează-te</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

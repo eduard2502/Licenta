@@ -1,0 +1,30 @@
+// src/themes/dark-theme.scss
+@use '@angular/material' as mat;
+
+/* 1. Palete */
+$primary-palette : mat.define-palette(mat.$grey-palette, 900);      // negru/gri închis
+$accent-palette  : mat.define-palette(mat.$blue-palette, 500);      // albastru mediu
+$warn-palette    : mat.define-palette(mat.$red-palette);
+
+/* 2. Dark theme */
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $primary-palette,
+    accent:  $accent-palette,
+    warn:    $warn-palette
+  )
+));
+
+/* 3. Include Material core & theme */
+@include mat.core();
+@include mat.all-component-themes($dark-theme);
+
+/* 4. Override-uri globale */
+body {
+  background: mat.get-color-from-palette($primary-palette, 900);
+  color:      mat.get-color-from-palette($primary-palette, 50);
+  font-family: Roboto, sans-serif;
+}
+a, button.mat-button, button.mat-raised-button {
+  color: mat.get-color-from-palette($accent-palette, 200);
+}

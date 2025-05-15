@@ -1,18 +1,7 @@
 /* src/app/app.component.scss */
-.layout {
-  height: 100vh;
-}
 
-.content {
-  padding: 1rem;
-}
-
-mat-sidenav {
-  width: 200px;
-}
-
-mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+/* Poţi adăuga aici stiluri globale pentru AppComponent */
+:host {
+  display: block;
+  min-height: 100vh;
 }

@@ -1,0 +1,18 @@
+/* src/app/login/login.component.scss */
+.login-card {
+  max-width: 360px;
+  margin: 5rem auto;
+  padding: 1rem;
+  background: #1e1e1e;
+  color: #eee;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error {
+  color: #f44336;
+  margin: 0.5rem 0;
+  text-align: center;
+}

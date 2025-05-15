@@ -1,0 +1,23 @@
+<!-- src/app/login/login.component.html -->
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title>Autentificare</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Parolă</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+      <div class="error" *ngIf="error">{{ error }}</div>
+      <button mat-raised-button color="accent" class="full-width" type="submit">
+        Loghează-te
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
